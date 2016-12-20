@@ -7,6 +7,9 @@
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(inhibit-startup-screen t)
+ '(package-selected-packages
+   (quote
+    (dracula-theme yasnippet sr-speedbar company-c-headers auto-complete-clang color-theme nyan-mode)))
  '(safe-local-variable-values
    (quote
     ((company-clang-arguments "-I/home/sean/projects/mlc/include/"))))
@@ -23,7 +26,7 @@
 
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
@@ -47,7 +50,7 @@
     (package-refresh-contents))
 
 
-(ensure-package-installed 'nyan-mode 'solarized-theme 'dash 'color-theme 'auto-complete-clang 'auto-complete 'popup 'company-c-headers 'company 'popup 'sr-speedbar 'yasnippet)
+(ensure-package-installed 'nyan-mode 'dracula-theme 'dash 'color-theme 'auto-complete-clang 'auto-complete 'popup 'company-c-headers 'company 'popup 'sr-speedbar 'yasnippet)
 
 (package-initialize)
 
@@ -67,4 +70,4 @@
 (define-key c++-mode-map  [(tab)] 'company-complete)
 
 (nyan-mode)
-(load-theme 'solarized-dark)
+(load-theme 'dracula t)
