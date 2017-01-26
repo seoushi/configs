@@ -124,3 +124,16 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#rotate active window
+super + shift + r
+      bspc node @/ -R 90
+
+#rotate node's parent
+super + r
+      bspc node -f @parent && bspc node -R 90
+
+#select parent
+super + p
+      bspc node -f @parent
+	
